@@ -142,7 +142,76 @@ Wireframe 3: Detalles de la Tarea
 | [ Editar ]                       |
 | [ Eliminar ]                     |
 +----------------------------------+
+## 7. Arquitectura y almacenamiento
 
-Autor
+La aplicación separará la interfaz de usuario de la gestión de los datos. En una fase posterior se utilizará Room como capa de acceso a una base de datos SQLite local. Cada tarea podrá contener información como identificador, título, descripción, estado, prioridad, categoría y fecha.
+
+## 8. Actualización del proyecto
+
+En esta etapa se creó la estructura inicial de CarWash Daily Checklist en Android Studio utilizando Kotlin. También se organizó el proyecto dentro de la carpeta correcta del repositorio, se configuraron los archivos de Gradle y se verificó que el proyecto compilara correctamente.
+
+Además, se configuró el archivo `.gitignore` para evitar la publicación de archivos locales y configuraciones propias del entorno de desarrollo. Finalmente, se realizó un commit y un push del código inicial al repositorio remoto en GitHub.
+
+La aplicación todavía se encuentra en desarrollo. Las funciones para crear, editar, completar y eliminar tareas, junto con el almacenamiento local, serán incorporadas en las próximas etapas.
+
+Los cambios detallados se encuentran en el archivo [CHANGELOG.md](CHANGELOG.md).
+
+## 9. Estado actual
+
+- [x] Idea y problema empresarial definidos.
+- [x] Borrador inicial del proyecto.
+- [x] Wireframes preliminares.
+- [x] Cuenta de GitHub creada.
+- [x] GitHub Desktop configurado.
+- [x] Android Studio instalado.
+- [x] Repositorio clonado en la ubicación correcta.
+- [x] Proyecto Android creado con Kotlin.
+- [x] Sincronización de Gradle completada.
+- [x] Compilación inicial verificada.
+- [x] Código base publicado mediante commit y push.
+- [x] Changelog actualizado.
+- [ ] Pantalla principal de tareas implementada.
+- [ ] Funciones para crear, editar, completar y eliminar tareas implementadas.
+- [ ] Almacenamiento local con Room implementado.
+- [ ] Pruebas en emulador o dispositivo completadas.
+- [ ] Publicación definitiva en GitHub Classroom verificada.
+- [ ] Versión final preparada para el módulo 8.
+
+## 10. Registro de cambios resumido
+
+### Pasado
+
+- Se identificó el problema empresarial que atenderá la aplicación.
+- Se definieron las funciones iniciales.
+- Se elaboraron los wireframes preliminares.
+- Se planificó el uso de Figma para los prototipos digitales.
+
+### Actual
+
+- Se creó el proyecto base en Android Studio con Kotlin.
+- Se organizó correctamente el repositorio local.
+- Se configuraron los archivos de Gradle y el archivo `.gitignore`.
+- Se verificó que el proyecto compilara correctamente.
+- Se publicó el código inicial mediante un commit y un push.
+- Se agregó el archivo `CHANGELOG.md`.
+
+### Futuro
+
+- Diseñar las pantallas finales.
+- Implementar la lista de tareas.
+- Agregar las funciones para crear, editar, completar y eliminar tareas.
+- Incorporar almacenamiento local con Room y SQLite.
+- Ejecutar pruebas en un emulador y un dispositivo Android.
+- Preparar la versión final del programa para el módulo 8.
+
+## 11. Repositorio y documentación
+
+- Repositorio: [CarWash Daily Checklist](https://github.com/Michael3848/CarWash-Daily-Checklist)
+- README: [README.md](https://github.com/Michael3848/CarWash-Daily-Checklist)
+- Changelog: [CHANGELOG.md](https://github.com/Michael3848/CarWash-Daily-Checklist)
+- Wiki: [Wiki del proyecto](https://github.com/Michael3848/CarWash-Daily-Checklist)
+
+## Autor
 
 Michael Ramirez
+

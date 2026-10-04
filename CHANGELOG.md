@@ -12,7 +12,8 @@ Todos los cambios relevantes de CarWash Daily Checklist se documentarán en este
 - Incorporar almacenamiento local con Room y SQLite.
 - Realizar pruebas en un emulador y un dispositivo Android.
 - Actualizar la documentación conforme avance el desarrollo.
-- Preparar la entrega final del proyecto.
+- Preparar el código para su publicación en GitHub Classroom.
+- Preparar la versión final del programa para el módulo 8.
 
 ## [0.3.0] - 2026-10-04
 
@@ -20,21 +21,24 @@ Todos los cambios relevantes de CarWash Daily Checklist se documentarán en este
 
 - Proyecto base de Android desarrollado con Kotlin.
 - Estructura inicial del módulo `app`.
-- Archivos Gradle necesarios para compilar el proyecto.
-- Archivo `.gitignore` para excluir configuraciones y archivos locales.
+- Archivos de Gradle necesarios para compilar el proyecto.
+- Archivo `.gitignore` para excluir archivos locales y configuraciones del entorno.
+- Repositorio local organizado dentro de la carpeta correspondiente al proyecto.
 
 ### Cambiado
 
-- El repositorio fue reorganizado para mantener el proyecto Android dentro de la carpeta correcta.
-- Se verificó la compilación del proyecto desde Android Studio.
+- Se trasladó el proyecto Android a la ubicación correcta del repositorio local.
+- Se verificó la sincronización de Gradle.
+- Se comprobó que el proyecto compila correctamente en Android Studio.
+- Se realizó un commit y un push del código inicial al repositorio remoto.
 
 ## [0.2.0] - 2026-09-20
 
 ### Agregado
 
 - Wireframes preliminares de las pantallas principales.
-- Planificación del uso de Figma para los prototipos digitales.
-- Definición inicial de las funciones para crear, editar, completar y eliminar tareas.
+- Planificación del uso de Figma para convertir los esquemas en prototipos digitales.
+- Definición de las funciones para crear, editar, completar y eliminar tareas.
 
 ## [0.1.0] - 2026-09-06
 
@@ -42,5 +46,5 @@ Todos los cambios relevantes de CarWash Daily Checklist se documentarán en este
 
 - Descripción inicial de CarWash Daily Checklist.
 - Exposición del problema observado en el lava autos.
-- Identificación de la plataforma y las herramientas propuestas.
+- Identificación de las plataformas y herramientas propuestas.
 - Definición inicial de la interfaz, la funcionalidad y el diseño.
