@@ -5,40 +5,42 @@ CarWash Daily Checklist es una aplicación móvil para Android que permite organ
 La aplicación ayuda a reducir olvidos y ofrece una forma sencilla de registrar, completar y consultar las tareas operativas.
 
 1. Problema identificado
-   En un lava autos se realizan numerosas actividades de rutina que son necesarias para mantener la calidad del servicio. Muchas de estas actividades se recuerdan de manera informal o se comunican verbalmente, lo que puede ocasionar retrasos, olvidos o inconsistencias.
 
-CarWash Daily Checklist convierte ese procedimiento informal en una lista digital que permite supervisar las tareas desde un dispositivo Android.
+    En un lava autos se realizan numerosas actividades de rutina que son necesarias para mantener la calidad del servicio. Muchas de estas actividades se recuerdan de manera informal o se comunican verbalmente, lo que puede ocasionar retrasos, olvidos o inconsistencias.
+
+    CarWash Daily Checklist convierte ese procedimiento informal en una lista digital que permite supervisar las tareas desde un dispositivo Android.
 
 2. Funciones principales
-   La versión actual permite:
+   
+La versión actual permite:
 
-Crear tareas con título y descripción opcional.
+    Crear tareas con título y descripción opcional.
 
-Validar que cada tarea tenga un título.
+    Validar que cada tarea tenga un título.
 
-Mostrar todas las tareas guardadas.
+    Mostrar todas las tareas guardadas.
 
-Editar el título y la descripción.
+    Editar el título y la descripción.
 
-Eliminar tareas mediante una confirmación.
+    Eliminar tareas mediante una confirmación.
 
-Marcar tareas como completadas o pendientes.
+    Marcar tareas como completadas o pendientes.
 
-Mostrar un contador de tareas pendientes.
+    Mostrar un contador de tareas pendientes.
 
-Filtrar las tareas por estado:
+    Filtrar las tareas por estado:
 
-Todas.
+    Todas.
 
-Pendientes.
+    Pendientes.
 
-Completadas.
+    Completadas.
 
-Mostrar mensajes cuando un filtro no tiene resultados.
+    Mostrar mensajes cuando un filtro no tiene resultados.
 
-Conservar la información después de cerrar la aplicación.
+    Conservar la información después de cerrar la aplicación.
 
-Desplazar la pantalla cuando existen muchas tareas.
+    Desplazar la pantalla cuando existen muchas tareas.
 
 3. Tecnologías utilizadas
    Android Studio.
