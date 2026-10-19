@@ -69,19 +69,19 @@ Para editar o eliminar una tarea, se debe mantener presionado el elemento corres
 
 6. Capturas de la aplicación
    Pantalla principal
-   docs/screenshots/01-pantalla-principal.png
+   ![01-pantalla-principal.png](docs/screenshots/01-pantalla-principal.png)docs/screenshots/01-pantalla-principal.png
 
 Formulario de nueva tarea
-docs/screenshots/02-formulario-nueva-tarea.png
+![02-formulario-nueva-tarea.png](docs/screenshots/02-formulario-nueva-tarea.png)docs/screenshots/02-formulario-nueva-tarea.png
 
 Opciones de gestión
-docs/screenshots/03-opciones-tarea.png
+![03-opciones-tarea.png](docs/screenshots/03-opciones-tarea.png)docs/screenshots/03-opciones-tarea.png
 
 Tareas pendientes
-docs/screenshots/04-tareas-pendientes.png
+![04-tareas-pendientes.png](docs/screenshots/04-tareas-pendientes.png)docs/screenshots/04-tareas-pendientes.png
 
 Tareas completadas
-docs/screenshots/05-tareas-completadas.png
+![05-tareas-completadas.png](docs/screenshots/05-tareas-completadas.png)docs/screenshots/05-tareas-completadas.png
 
 7. Cómo ejecutar el proyecto
    Clonar el repositorio:
