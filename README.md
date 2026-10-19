@@ -43,17 +43,18 @@ La versión actual permite:
     Desplazar la pantalla cuando existen muchas tareas.
 
 3. Tecnologías utilizadas
+
     Android Studio.
     Kotlin.
     XML para la interfaz.
     Android SDK.
     Android Jetpack.
-     Room.
-     SQLite.
-     Kotlin Coroutines y Flow.
+    Room.
+    SQLite.
+    Kotlin Coroutines y Flow.
     Gradle.
     KSP.
-     Git.
+    Git.
     GitHub.
     GitHub Desktop.
 
