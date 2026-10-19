@@ -45,17 +45,29 @@ La versión actual permite:
 3. Tecnologías utilizadas
 
     Android Studio.
+
     Kotlin.
+
     XML para la interfaz.
+
     Android SDK.
+
     Android Jetpack.
+
     Room.
+
     SQLite.
+
     Kotlin Coroutines y Flow.
+
     Gradle.
+
     KSP.
+
     Git.
+
     GitHub.
+
     GitHub Desktop.
 
    4. Arquitectura y almacenamiento
