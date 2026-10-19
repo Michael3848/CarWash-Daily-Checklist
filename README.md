@@ -237,5 +237,7 @@ La aplicación fue probada en un dispositivo virtual Pixel 6 con API 35.
 
     Changelog: https://github.com/Michael3848/CarWash-Daily-Checklist/blob/main/CHANGELOG.md
 
+   WIKI: https://github.com/Michael3848/CarWash-Daily-Checklist/wiki/CarWash-Daily-Checklist-%E2%80%90-Informe-final-del-proyecto
+
     Autor
     Michael Ramirez
