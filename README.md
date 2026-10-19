@@ -12,7 +12,7 @@ La aplicación ayuda a reducir olvidos y ofrece una forma sencilla de registrar,
 
 2. Funciones principales
    
-La versión actual permite:
+    La versión actual permite:
 
     Crear tareas con título y descripción opcional.
 
