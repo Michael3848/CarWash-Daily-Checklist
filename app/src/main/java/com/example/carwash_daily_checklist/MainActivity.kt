@@ -23,15 +23,18 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import android.widget.RadioGroup
 
 class MainActivity : AppCompatActivity() {
 
     private lateinit var taskCountText: TextView
     private lateinit var taskContainer: LinearLayout
     private lateinit var newTaskButton: Button
+    private lateinit var filterGroup: RadioGroup
     private lateinit var taskDao: TaskDao
 
     private var currentTasks: List<Task> = emptyList()
+    private var selectedFilterId: Int = R.id.filterAll
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,12 +61,17 @@ class MainActivity : AppCompatActivity() {
         taskCountText = findViewById(R.id.tvTaskCount)
         taskContainer = findViewById(R.id.taskContainer)
         newTaskButton = findViewById(R.id.btnNewTask)
+        filterGroup = findViewById(R.id.filterGroup)
 
         val database = AppDatabase.getDatabase(this)
         taskDao = database.taskDao()
 
         newTaskButton.setOnClickListener {
             showTaskFormDialog()
+        }
+        filterGroup.setOnCheckedChangeListener { _, checkedId ->
+            selectedFilterId = checkedId
+            displayFilteredTasks()
         }
 
         insertInitialTasksIfNecessary()
@@ -105,14 +113,59 @@ class MainActivity : AppCompatActivity() {
         lifecycleScope.launch {
             taskDao.getAllTasks().collectLatest { tasks ->
                 currentTasks = tasks
-                displayTasks(tasks)
                 updatePendingTaskCount(tasks)
+                displayFilteredTasks()
             }
         }
     }
 
+    private fun displayFilteredTasks() {
+        val filteredTasks = when (selectedFilterId) {
+            R.id.filterPending -> {
+                currentTasks.filter { !it.isCompleted }
+            }
+
+            R.id.filterCompleted -> {
+                currentTasks.filter { it.isCompleted }
+            }
+
+            else -> {
+                currentTasks
+            }
+        }
+
+        displayTasks(filteredTasks)
+    }
     private fun displayTasks(tasks: List<Task>) {
         taskContainer.removeAllViews()
+
+        if (tasks.isEmpty()) {
+            val emptyMessage = TextView(this).apply {
+                text = when (selectedFilterId) {
+                    R.id.filterPending ->
+                        "No hay tareas pendientes."
+
+                    R.id.filterCompleted ->
+                        "Todavía no hay tareas completadas."
+
+                    else ->
+                        "No hay tareas registradas."
+                }
+
+                textSize = 16f
+                setTextColor(0xFF566573.toInt())
+                gravity = android.view.Gravity.CENTER
+                setPadding(
+                    dpToPx(12),
+                    dpToPx(24),
+                    dpToPx(12),
+                    dpToPx(24)
+                )
+            }
+
+            taskContainer.addView(emptyMessage)
+            return
+        }
 
         tasks.forEachIndexed { index, task ->
             if (index > 0) {
