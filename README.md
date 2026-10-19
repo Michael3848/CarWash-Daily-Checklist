@@ -1,217 +1,151 @@
-CarWash-Daily-Checklist
+CarWash Daily Checklist
+CarWash Daily Checklist es una aplicación móvil para Android que permite organizar y supervisar las tareas diarias de un lava autos. El proyecto surge de una necesidad observada en mi lugar de trabajo, donde actividades como revisar los productos de limpieza, organizar las herramientas y verificar los equipos deben realizarse diariamente.
 
-## 1. Descripción del Proyecto
+La aplicación ayuda a reducir olvidos y ofrece una forma sencilla de registrar, completar y consultar las tareas operativas.
 
-CarWash Daily Checklist es una aplicación móvil para Android diseñada para ayudar a gestionar y organizar las tareas diarias necesarias para el correcto funcionamiento de un lava autos.
+1. Problema identificado
+   En un lava autos se realizan numerosas actividades de rutina que son necesarias para mantener la calidad del servicio. Muchas de estas actividades se recuerdan de manera informal o se comunican verbalmente, lo que puede ocasionar retrasos, olvidos o inconsistencias.
 
-La aplicación permitirá crear, visualizar, editar y marcar tareas como completadas, facilitando el seguimiento de actividades rutinarias que son esenciales para la operación diaria del negocio. El proyecto nace de una necesidad real observada en mi lugar de trabajo, donde existen múltiples tareas operativas que deben realizarse diariamente para garantizar un servicio eficiente y de calidad.
+CarWash Daily Checklist convierte ese procedimiento informal en una lista digital que permite supervisar las tareas desde un dispositivo Android.
 
-El propósito de la aplicación es mejorar la organización, reducir olvidos y asegurar que todas las tareas importantes sean completadas oportunamente.
+2. Funciones principales
+   La versión actual permite:
 
-## 2. Exposición del Problema
+Crear tareas con título y descripción opcional.
+Validar que cada tarea tenga un título.
+Mostrar todas las tareas guardadas.
+Editar el título y la descripción.
+Eliminar tareas mediante una confirmación.
+Marcar tareas como completadas o pendientes.
+Mostrar un contador de tareas pendientes.
+Filtrar las tareas por estado:
+Todas.
+Pendientes.
+Completadas.
+Mostrar mensajes cuando un filtro no tiene resultados.
+Conservar la información después de cerrar la aplicación.
+Desplazar la pantalla cuando existen muchas tareas.
+3. Tecnologías utilizadas
+   Android Studio.
+   Kotlin.
+   XML para la interfaz.
+   Android SDK.
+   Android Jetpack.
+   Room.
+   SQLite.
+   Kotlin Coroutines y Flow.
+   Gradle.
+   KSP.
+   Git.
+   GitHub.
+   GitHub Desktop.
+4. Arquitectura y almacenamiento
+   La aplicación separa la representación de las tareas de la gestión de los datos. Room funciona como una capa de abstracción sobre SQLite y permite almacenar la información localmente.
 
-En un lava autos se realizan numerosas tareas de rutina que son fundamentales para mantener la calidad del servicio y garantizar que los empleados dispongan de los recursos necesarios para realizar su trabajo correctamente.
+La estructura principal de datos contiene:
 
-Entre estas actividades se encuentran:
+Task
+├── id
+├── title
+├── description
+├── isCompleted
+└── createdAt
+Los componentes principales son:
 
-Verificar el inventario de productos de limpieza.
-Organizar herramientas y equipos.
-Revisar el funcionamiento de la hidrolavadora.
-Limpiar las áreas de trabajo.
-Supervisar la apertura y cierre del establecimiento.
-Verificar el abastecimiento de insumos.
+data/
+├── Task.kt
+├── TaskDao.kt
+└── AppDatabase.kt
+Task.kt representa cada tarea almacenada.
+TaskDao.kt contiene las operaciones para consultar, insertar, actualizar y eliminar tareas.
+AppDatabase.kt crea y administra la base de datos local.
+MainActivity.kt conecta la interfaz con los datos y controla las acciones del usuario.
+5. Funcionamiento
+   Al iniciar la aplicación, Room recupera las tareas guardadas y las presenta en la pantalla principal. Si la base de datos está vacía durante la primera ejecución, se agregan algunas tareas iniciales relacionadas con la operación del lava autos.
 
-Actualmente, estas tareas suelen gestionarse de forma informal, dependiendo de la memoria o de recordatorios verbales. Esto puede ocasionar olvidos, retrasos o inconsistencias que afectan el flujo de trabajo y la eficiencia operativa.
+Cuando se crea, edita, completa o elimina una tarea, Room guarda el cambio automáticamente. La interfaz observa las modificaciones mediante Flow, por lo que la lista y el contador se actualizan sin reiniciar la aplicación.
 
-La aplicación propuesta busca solucionar este problema mediante una herramienta sencilla que permita registrar y controlar las tareas diarias de manera organizada.
+Para editar o eliminar una tarea, se debe mantener presionado el elemento correspondiente.
 
-## 3. Plataforma
+6. Capturas de la aplicación
+   Pantalla principal
+   docs/screenshots/01-pantalla-principal.png
 
-La aplicación será desarrollada para dispositivos Android utilizando las siguientes herramientas y tecnologías:
+Formulario de nueva tarea
+docs/screenshots/02-formulario-nueva-tarea.png
 
-### Tecnologías
+Opciones de gestión
+docs/screenshots/03-opciones-tarea.png
 
-- Android Studio
-- Kotlin
-- Android SDK
-- Git
-- GitHub
-- Figma
+Tareas pendientes
+docs/screenshots/04-tareas-pendientes.png
 
-## 4. Interfaz de Usuario e Interfaz de Administrador
-Interfaz de Usuario
+Tareas completadas
+docs/screenshots/05-tareas-completadas.png
 
-La aplicación contará con una interfaz simple e intuitiva para facilitar su uso diario.
+7. Cómo ejecutar el proyecto
+   Clonar el repositorio:
+   git clone https://github.com/Michael3848/CarWash-Daily-Checklist.git
+   Abrir Android Studio.
 
-Pantallas principales:
+Seleccionar Open y abrir la carpeta del proyecto.
 
-Pantalla de inicio con lista de tareas.
-Pantalla para agregar tareas.
-Pantalla de detalles de la tarea.
-Pantalla de tareas completadas.
-Interfaz de Administrador
+Esperar a que termine la sincronización de Gradle.
 
-Debido a que la aplicación está diseñada para un entorno de trabajo pequeño, el administrador tendrá acceso a las mismas funciones de gestión.
+Crear o iniciar un dispositivo desde Device Manager.
 
-Las funciones administrativas incluirán:
+Seleccionar la configuración app.
 
-Crear tareas.
-Editar tareas.
-Eliminar tareas.
-Marcar tareas como completadas.
-Revisar tareas pendientes y finalizadas.
+Pulsar Run.
 
-## 5. Funcionalidad
+La aplicación fue probada en un dispositivo virtual Pixel 6 con API 35.
 
-La aplicación incorporará las siguientes funciones:
+8. Pruebas realizadas
+   Se verificaron las siguientes operaciones:
 
-Gestión de Tareas
-
--Crear nuevas tareas.
--Editar tareas existentes.
--Eliminar tareas.
--Consultar detalles de cada tarea.
-
-Seguimiento de Actividades
-
--Marcar tareas como completadas.
--Visualizar tareas pendientes.
--Visualizar tareas finalizadas.
-
-Organización
-
--Mostrar las tareas en una lista organizada.
--Facilitar el seguimiento de las actividades diarias del lava autos.
--Ayudar a garantizar que las tareas críticas no sean olvidadas.
-
-Ejemplos de Tareas
-
--Revisar inventario de jabón y cera.
--Organizar herramientas de trabajo.
--Limpiar área de espera.
--Verificar funcionamiento de la hidrolavadora.
--Revisar suministros para la jornada laboral.
--Preparar el área de trabajo para la apertura.
-
-## 6. Diseño (Wireframes o Esquemas de Página)
-
-Los wireframes y prototipos de la aplicación serán diseñados utilizando Figma antes de comenzar el desarrollo en Android Studio.
-
-Wireframe 1: Pantalla Principal
-
-+----------------------------------+
-|    CarWash Daily Checklist       |
-+----------------------------------+
-| Tareas Pendientes                |
-|                                  |
-| ☐ Revisar inventario             |
-| ☐ Organizar herramientas         |
-| ☐ Limpiar área de trabajo        |
-| ☐ Revisar hidrolavadora          |
-|                                  |
-|       + Nueva Tarea              |
-+----------------------------------+
-
-Wireframe 2: Agregar Tarea
-
-+----------------------------------+
-|          Nueva Tarea             |
-+----------------------------------+
-| Título                           |
-| [________________________]       |
-|                                  |
-| Descripción                      |
-| [________________________]       |
-|                                  |
-|         Guardar                  |
-+----------------------------------+
-
-Wireframe 3: Detalles de la Tarea
-
-+----------------------------------+
-|       Detalle de Tarea           |
-+----------------------------------+
-| Revisar Inventario               |
-|                                  |
-| Verificar existencia de jabón,   |
-| cera y demás productos.          |
-|                                  |
-| Estado: Pendiente                |
-|                                  |
-| [ Completar ]                    |
-| [ Editar ]                       |
-| [ Eliminar ]                     |
-+----------------------------------+
-## 7. Arquitectura y almacenamiento
-
-La aplicación separará la interfaz de usuario de la gestión de los datos. En una fase posterior se utilizará Room como capa de acceso a una base de datos SQLite local. Cada tarea podrá contener información como identificador, título, descripción, estado, prioridad, categoría y fecha.
-
-## 8. Actualización del proyecto
-
-En esta etapa se creó la estructura inicial de CarWash Daily Checklist en Android Studio utilizando Kotlin. También se organizó el proyecto dentro de la carpeta correcta del repositorio, se configuraron los archivos de Gradle y se verificó que el proyecto compilara correctamente.
-
-Además, se configuró el archivo `.gitignore` para evitar la publicación de archivos locales y configuraciones propias del entorno de desarrollo. Finalmente, se realizó un commit y un push del código inicial al repositorio remoto en GitHub.
-
-La aplicación todavía se encuentra en desarrollo. Las funciones para crear, editar, completar y eliminar tareas, junto con el almacenamiento local, serán incorporadas en las próximas etapas.
-
-Los cambios detallados se encuentran en el archivo [CHANGELOG.md](CHANGELOG.md).
-
-## 9. Estado actual
-
-- [x] Idea y problema empresarial definidos.
-- [x] Borrador inicial del proyecto.
-- [x] Wireframes preliminares.
-- [x] Cuenta de GitHub creada.
-- [x] GitHub Desktop configurado.
-- [x] Android Studio instalado.
-- [x] Repositorio clonado en la ubicación correcta.
-- [x] Proyecto Android creado con Kotlin.
-- [x] Sincronización de Gradle completada.
-- [x] Compilación inicial verificada.
-- [x] Código base publicado mediante commit y push.
-- [x] Changelog actualizado.
-- [ ] Pantalla principal de tareas implementada.
-- [ ] Funciones para crear, editar, completar y eliminar tareas implementadas.
-- [ ] Almacenamiento local con Room implementado.
-- [ ] Pruebas en emulador o dispositivo completadas.
-- [ ] Publicación definitiva en GitHub Classroom verificada.
-- [ ] Versión final preparada para el módulo 8.
-
-## 10. Registro de cambios resumido
-
-### Pasado
-
-- Se identificó el problema empresarial que atenderá la aplicación.
-- Se definieron las funciones iniciales.
-- Se elaboraron los wireframes preliminares.
-- Se planificó el uso de Figma para los prototipos digitales.
-
-### Actual
-
-- Se creó el proyecto base en Android Studio con Kotlin.
-- Se organizó correctamente el repositorio local.
-- Se configuraron los archivos de Gradle y el archivo `.gitignore`.
-- Se verificó que el proyecto compilara correctamente.
-- Se publicó el código inicial mediante un commit y un push.
-- Se agregó el archivo `CHANGELOG.md`.
-
-### Futuro
-
-- Diseñar las pantallas finales.
-- Implementar la lista de tareas.
-- Agregar las funciones para crear, editar, completar y eliminar tareas.
-- Incorporar almacenamiento local con Room y SQLite.
-- Ejecutar pruebas en un emulador y un dispositivo Android.
-- Preparar la versión final del programa para el módulo 8.
-
-## 11. Repositorio y documentación
-
-- Repositorio: [CarWash Daily Checklist](https://github.com/Michael3848/CarWash-Daily-Checklist)
-- README: [README.md](https://github.com/Michael3848/CarWash-Daily-Checklist)
-- Changelog: [CHANGELOG.md](https://github.com/Michael3848/CarWash-Daily-Checklist)
-- Wiki: [Wiki del proyecto](https://github.com/Michael3848/CarWash-Daily-Checklist)
-
-## Autor
-
-Michael Ramirez
-
+Inicio sin cierres inesperados.
+Validación del título obligatorio.
+Creación de tareas.
+Edición sin duplicados.
+Cancelación de edición.
+Eliminación con confirmación.
+Cancelación de eliminación.
+Marcado y desmarcado.
+Actualización del contador.
+Filtros de todas, pendientes y completadas.
+Mensajes para filtros sin resultados.
+Desplazamiento con listas largas.
+Conservación de datos después de cerrar y volver a abrir la aplicación.
+9. Estado del proyecto
+   Idea y problema empresarial definidos.
+   Wireframes preliminares elaborados.
+   Proyecto Android creado con Kotlin.
+   Actividad principal configurada.
+   Interfaz XML implementada.
+   Creación de tareas implementada.
+   Edición de tareas implementada.
+   Eliminación de tareas implementada.
+   Marcado de tareas como completadas.
+   Persistencia local con Room y SQLite.
+   Filtros de tareas implementados.
+   Desplazamiento vertical implementado.
+   Pruebas funcionales completadas.
+   Código publicado mediante commits y push.
+   Capturas de evidencia agregadas.
+   Versión funcional preparada.
+10. Posibles mejoras futuras
+    Incorporar prioridades y categorías.
+    Agregar fechas límite.
+    Generar recordatorios mediante WorkManager.
+    Añadir búsqueda de tareas.
+    Implementar un historial por fecha.
+    Permitir exportar un reporte de tareas.
+    Incorporar sincronización opcional en la nube.
+    Agregar diferentes cuentas o roles.
+    Implementar pruebas automatizadas adicionales.
+11. Repositorio y documentación
+    Repositorio: https://github.com/Michael3848/CarWash-Daily-Checklist
+    README: https://github.com/Michael3848/CarWash-Daily-Checklist/blob/main/README.md
+    Changelog: https://github.com/Michael3848/CarWash-Daily-Checklist/blob/main/CHANGELOG.md
+    Autor
+    Michael Ramirez
