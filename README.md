@@ -43,44 +43,50 @@ La versión actual permite:
     Desplazar la pantalla cuando existen muchas tareas.
 
 3. Tecnologías utilizadas
-   Android Studio.
-   Kotlin.
-   XML para la interfaz.
-   Android SDK.
-   Android Jetpack.
-   Room.
-   SQLite.
-   Kotlin Coroutines y Flow.
-   Gradle.
-   KSP.
-   Git.
-   GitHub.
-   GitHub Desktop.
+    Android Studio.
+    Kotlin.
+    XML para la interfaz.
+    Android SDK.
+    Android Jetpack.
+     Room.
+     SQLite.
+     Kotlin Coroutines y Flow.
+    Gradle.
+    KSP.
+     Git.
+    GitHub.
+    GitHub Desktop.
 
-4. Arquitectura y almacenamiento
-   La aplicación separa la representación de las tareas de la gestión de los datos. Room funciona como una capa de abstracción sobre SQLite y permite almacenar la información localmente.
+   4. Arquitectura y almacenamiento
+      La aplicación separa la representación de las tareas de la gestión de los datos. Room funciona como una capa de abstracción sobre SQLite y permite almacenar la información localmente.
 
 La estructura principal de datos contiene:
 
-Task
-├── id
-├── title
-├── description
-├── isCompleted
-└── createdAt
+    Task
+    ├── id
+    ├── title
+    ├── description
+    ├── isCompleted
+    └── createdAt
+
 Los componentes principales son:
 
-data/
-├── Task.kt
-├── TaskDao.kt
-└── AppDatabase.kt
+    data/
+    ├── Task.kt
+    ├── TaskDao.kt
+    └── AppDatabase.kt
+
 Task.kt representa cada tarea almacenada.
+
 TaskDao.kt contiene las operaciones para consultar, insertar, actualizar y eliminar tareas.
+
 AppDatabase.kt crea y administra la base de datos local.
+
 MainActivity.kt conecta la interfaz con los datos y controla las acciones del usuario.
 
 5. Funcionamiento
-   Al iniciar la aplicación, Room recupera las tareas guardadas y las presenta en la pantalla principal. Si la base de datos está vacía durante la primera ejecución, se agregan algunas tareas iniciales relacionadas con la operación del lava autos.
+   
+Al iniciar la aplicación, Room recupera las tareas guardadas y las presenta en la pantalla principal. Si la base de datos está vacía durante la primera ejecución, se agregan algunas tareas iniciales relacionadas con la operación del lava autos.
 
 Cuando se crea, edita, completa o elimina una tarea, Room guarda el cambio automáticamente. La interfaz observa las modificaciones mediante Flow, por lo que la lista y el contador se actualizan sin reiniciar la aplicación.
 
