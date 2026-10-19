@@ -70,8 +70,9 @@ La versión actual permite:
 
     GitHub Desktop.
 
-   4. Arquitectura y almacenamiento
-      La aplicación separa la representación de las tareas de la gestión de los datos. Room funciona como una capa de abstracción sobre SQLite y permite almacenar la información localmente.
+4. Arquitectura y almacenamiento
+
+La aplicación separa la representación de las tareas de la gestión de los datos. Room funciona como una capa de abstracción sobre SQLite y permite almacenar la información localmente.
 
 La estructura principal de datos contiene:
 
