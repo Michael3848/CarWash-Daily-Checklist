@@ -85,67 +85,73 @@ Cuando se crea, edita, completa o elimina una tarea, Room guarda el cambio autom
 Para editar o eliminar una tarea, se debe mantener presionado el elemento correspondiente.
 
 6. Capturas de la aplicación
-   Pantalla principal
-   ![01-pantalla-principal.png](docs/screenshots/01-pantalla-principal.png)
+   
+Pantalla principal
+
+![01-pantalla-principal.png](docs/screenshots/01-pantalla-principal.png)
 
 Formulario de nueva tarea
+
 ![02-formulario-nueva-tarea.png](docs/screenshots/02-formulario-nueva-tarea.png)
 
 Opciones de gestión
+
 ![03-opciones-tarea.png](docs/screenshots/03-opciones-tarea.png)
 
 Tareas pendientes
+
 ![04-tareas-pendientes.png](docs/screenshots/04-tareas-pendientes.png)
 
 Tareas completadas
+
 ![05-tareas-completadas.png](docs/screenshots/05-tareas-completadas.png)
 
 7. Cómo ejecutar el proyecto
   
     Clonar el repositorio: git clone https://github.com/Michael3848/CarWash-Daily-Checklist.git
    
-Abrir Android Studio.
+    Abrir Android Studio.
 
-Seleccionar Open y abrir la carpeta del proyecto.
+    Seleccionar Open y abrir la carpeta del proyecto.
 
-Esperar a que termine la sincronización de Gradle.
+    Esperar a que termine la sincronización de Gradle.
 
-Crear o iniciar un dispositivo desde Device Manager.
+    Crear o iniciar un dispositivo desde Device Manager.
 
-Seleccionar la configuración app.
+    Seleccionar la configuración app.
 
-Pulsar Run.
+    Pulsar Run.
 
 La aplicación fue probada en un dispositivo virtual Pixel 6 con API 35.
 
 8. Pruebas realizadas
    Se verificaron las siguientes operaciones:
 
-Inicio sin cierres inesperados.
+    Inicio sin cierres inesperados.
 
-Validación del título obligatorio.
+    Validación del título obligatorio.
 
-Creación de tareas.
+    Creación de tareas.
 
-Edición sin duplicados.
+    Edición sin duplicados.
 
-Cancelación de edición.
+    Cancelación de edición.
 
-Eliminación con confirmación.
+    Eliminación con confirmación.
 
-Cancelación de eliminación.
+    Cancelación de eliminación.
 
-Marcado y desmarcado.
+    Marcado y desmarcado.
 
-Actualización del contador.
+    Actualización del contador.
 
-Filtros de todas, pendientes y completadas.
+    Filtros de todas, pendientes y completadas.
 
-Mensajes para filtros sin resultados.
+    Mensajes para filtros sin resultados.
 
-Desplazamiento con listas largas.
+    Desplazamiento con listas largas.
 
-Conservación de datos después de cerrar y volver a abrir la aplicación.
+    Conservación de datos después de cerrar y volver a abrir la aplicación.
 
 9. Estado del proyecto
 
